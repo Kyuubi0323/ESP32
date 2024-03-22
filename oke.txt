@@ -1,1 +1,5 @@
-sss
+1. Danh sách nhân sự k65_hoạt động, lịch trực kì tới
+2. Đánh giá thành viên_k66_starter
+3. Triển khai công việc tuyển tvm
+4. Chia mentor
+5. Định hướng cviec
