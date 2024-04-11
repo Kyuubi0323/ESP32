@@ -27,6 +27,7 @@
 #include "input_hadilao.h"
 #include "wifi_sta_hadilao.h"
 #include "wifi_ap_hadilao.h"
+#include "uart_hadilao.h"
 
 #define LED 2
 static const char *TAG = "MAIN";
