@@ -26,12 +26,15 @@
 #include "output_hadilao.h"
 #include "input_hadilao.h"
 #include "wifi_sta_hadilao.h"
-
+#include "wifi_ap_hadilao.h"
 
 #define LED 2
 static const char *TAG = "MAIN";
 char ssid[50] = {0};
 char pwd[50] = {0};
+
+RingbufHandle_t webserver_ring_buf;
+httpd_handle_t server;
 
 void app_main()
 {   
@@ -57,8 +60,9 @@ void app_main()
     memcpy(wifi_config.sta.ssid, ssid, strlen(ssid));
     memcpy(wifi_config.sta.password, pwd, strlen(pwd));
     
-    wifi_start(wifi_config, WIFI_MODE_STA);
-
+    //wifi_start(wifi_config, WIFI_MODE_STA);
+    vTaskDelay(2000 / portTICK_PERIOD_MS);
+    wifi_init_softap();
     while(1)
     {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
