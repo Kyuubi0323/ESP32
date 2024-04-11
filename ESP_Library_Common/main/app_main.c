@@ -8,7 +8,7 @@
 
 #include "sdkconfig.h"
 #include "output_hadilao.h"
-#include "input_hadilao.h"
+//#include "input_hadilao.h"
 #define LED 2
 static const char *TAG = "MAIN";
 void app_main()
