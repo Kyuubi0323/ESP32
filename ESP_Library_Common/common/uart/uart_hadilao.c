@@ -47,7 +47,6 @@ static void uart_event_task(void *pvParameters)
                 case UART_DATA:
                     uart_read_bytes(EX_UART_NUM, dtmp, event.size, portMAX_DELAY);
                     p_uart_handle(dtmp, event.size);
-
                     break;
                 case UART_FIFO_OVF:
                     ESP_LOGI(TAG, "hw fifo overflow");
@@ -71,7 +70,6 @@ static void uart_event_task(void *pvParameters)
                 default:
                     ESP_LOGI(TAG, "uart event type: %d", event.type);
                     break;
-
             }
         }
     }

@@ -69,6 +69,7 @@ httpd_uri_t post_wifi = {
     .handler = post_wifi_handler,
     .user_ctx = NULL,
 };
+
 httpd_uri_t icon_favi = {
     .uri = "/",
     .method = HTTP_GET,
