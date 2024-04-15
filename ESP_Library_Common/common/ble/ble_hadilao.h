@@ -45,13 +45,7 @@
 #include <stdlib.h>
 
 
-
-
-
-
-
-
-
+esp_err_t bluetooth_init(void);
 
 
 
