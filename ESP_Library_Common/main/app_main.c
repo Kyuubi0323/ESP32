@@ -23,19 +23,21 @@
 #include "driver/uart.h"
 #include "driver/spi_master.h"
 
+#include "web_hadilao.h"
 #include "output_hadilao.h"
 #include "input_hadilao.h"
 #include "wifi_sta_hadilao.h"
 #include "wifi_ap_hadilao.h"
 #include "uart_hadilao.h"
 
+
 #define LED 2
 static const char *TAG = "MAIN";
 char ssid[50] = {0};
 char pwd[50] = {0};
 
-RingbufHandle_t webserver_ring_buf;
-httpd_handle_t server;
+//RingbufHandle_t webserver_ring_buf;
+ 
 
 void app_main()
 {   
@@ -54,21 +56,26 @@ void app_main()
     output_io_create(LED);
     /* init wifi configuration*/
     wifi_init();
-    sprintf(ssid, "Kyuubi");
-    sprintf(pwd, "laclac123");
+    sprintf(ssid, "SonHa");
+    sprintf(pwd, "07052003");
     wifi_config_t wifi_config;
     bzero(&wifi_config, sizeof(wifi_config_t));
     memcpy(wifi_config.sta.ssid, ssid, strlen(ssid));
     memcpy(wifi_config.sta.password, pwd, strlen(pwd));
     
-    //wifi_start(wifi_config, WIFI_MODE_STA);
+    //wifi_sta_start(wifi_config, WIFI_MODE_STA);
+   wifi_init_softap();
+   
+    start_webserver();
+    
     vTaskDelay(2000 / portTICK_PERIOD_MS);
-    wifi_init_softap();
+
+    
     while(1)
     {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
         output_io_toggle(LED);
-        ESP_LOGI(TAG, "TOGGLE");
+        //ESP_LOGI(TAG, "TOGGLE");
     }
     
 }
