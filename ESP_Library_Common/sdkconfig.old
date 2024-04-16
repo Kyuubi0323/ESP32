@@ -370,6 +370,15 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# Hadilao_Embedded
+#
+CONFIG_TARGET_DOMAIN_URI="coaps://californium.eclipseprojects.io"
+CONFIG_COAP_PSK_KEY="sesame"
+CONFIG_COAP_PSK_IDENTITY="password"
+CONFIG_MANDEVICES="18"
+# end of Hadilao_Embedded
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEBUG=y
@@ -1002,7 +1011,7 @@ CONFIG_ADC_DISABLE_DAC_OUTPUT=y
 #
 # Wireless Coexistence
 #
-CONFIG_ESP_COEX_SW_COEXIST_ENABLE=y
+# CONFIG_ESP_COEX_SW_COEXIST_ENABLE is not set
 # end of Wireless Coexistence
 
 #
@@ -2089,6 +2098,21 @@ CONFIG_WIFI_PROV_AUTOSTOP_TIMEOUT=30
 CONFIG_WIFI_PROV_STA_ALL_CHANNEL_SCAN=y
 # CONFIG_WIFI_PROV_STA_FAST_SCAN is not set
 # end of Wi-Fi Provisioning Manager
+
+#
+# CoAP Configuration
+#
+CONFIG_COAP_MBEDTLS_PSK=y
+# CONFIG_COAP_MBEDTLS_PKI is not set
+# CONFIG_COAP_DEBUGGING is not set
+CONFIG_COAP_LOG_DEFAULT_LEVEL=0
+CONFIG_COAP_TCP_SUPPORT=y
+# CONFIG_COAP_OSCORE_SUPPORT is not set
+# CONFIG_COAP_OBSERVE_PERSIST is not set
+# CONFIG_COAP_WEBSOCKETS is not set
+# CONFIG_COAP_CLIENT_SUPPORT is not set
+# CONFIG_COAP_SERVER_SUPPORT is not set
+# end of CoAP Configuration
 # end of Component config
 
 CONFIG_IDF_EXPERIMENTAL_FEATURES=y

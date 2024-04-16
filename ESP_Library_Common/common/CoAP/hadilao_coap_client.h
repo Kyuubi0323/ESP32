@@ -38,11 +38,21 @@
 #include <netdb.h>
 #include <sys/param.h>
 
+#define CONFIG_COAP_MBEDTLS_PSK_0 0
+#define CONFIG_COAP_LOG_DEFAULT_LEVEL 0
+#define CONFIG_COAP_TCP_SUPPORT 1
+#define CONFIG_COAP_SERVER_SUPPORT 1
+#define CONFIG_EXAMPLE_COAP_PSK_KEY "secret-key"
+#define CONFIG_EXAMPLE_COAP_MCAST_NONE 1
+
+#define CONFIG_COAP_TARGET_DOMAIN_URI "coaps://californium.eclipseprojects.io"
+#define COAP_DEFAULT_TIME_SEC 60
+
 // coap_response_t
 // message_handler(coap_session_t *session,
 //                 const coap_pdu_t *sent,
 //                 const coap_pdu_t *received,
 //                 const coap_mid_t mid);
-
+void coap_client(void *pointer);
 
 #endif

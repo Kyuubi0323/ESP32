@@ -372,9 +372,10 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 # Hadilao_Embedded
 #
-CONFIG_EXAMPLE_TARGET_DOMAIN_URI="coaps://californium.eclipseprojects.io"
-CONFIG_EXAMPLE_COAP_PSK_KEY="sesame"
-CONFIG_EXAMPLE_COAP_PSK_IDENTITY="password"
+CONFIG_COAP_TARGET_DOMAIN_URI="coaps://californium.eclipseprojects.io"
+CONFIG_COAP_PSK_KEY="sesame"
+CONFIG_COAP_PSK_IDENTITY="password"
+CONFIG_MANDEVICES="17"
 # end of Hadilao_Embedded
 
 #
