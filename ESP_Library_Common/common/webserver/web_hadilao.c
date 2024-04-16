@@ -20,13 +20,15 @@
 #include "driver/gpio.h"
 
 #include "web_hadilao.h"
+
 static const char *TAG = "WEBSERVER";
+
 RingbufHandle_t webserver_ring_buf;
 static httpd_handle_t server=NULL;
-extern const uint8_t index_html_start[] asm("_binary_index_html_start");
-    extern const uint8_t index_html_end[] asm("_binary_index_html_end");
-    extern const unsigned char favicon_ico_start[] asm("_binary_favicon_ico_start");
-    extern const unsigned char favicon_ico_end[] asm("_binary_favicon_ico_end");
+const uint8_t index_html_start[] asm("_binary_index_html_start");
+const uint8_t index_html_end[] asm("_binary_index_html_end");
+const unsigned char favicon_ico_start[] asm("_binary_favicon_ico_start");
+const unsigned char favicon_ico_end[] asm("_binary_favicon_ico_end");
 esp_err_t http_404_error_handler(httpd_req_t *req, httpd_err_code_t err)
 {
     httpd_resp_send_err(req, HTTPD_404_NOT_FOUND, "Some 404 error message");
