@@ -48,41 +48,41 @@
 
 #include "ble_hadilao.h"
 
-#ifdef  BLE_MESH
+//#ifdef  BLE_MESH
 
 
 const char *TAG = "BLE_MESH";
 
-esp_err_t bluetooth_init(void)
-{
-    esp_err_t ret;
+// esp_err_t bluetooth_init(void)
+// {
+//     esp_err_t ret;
 
-    mesh_sem = xSemaphoreCreateBinary();
-    if (mesh_sem == NULL) {
-        ESP_LOGE(TAG, "Failed to create mesh semaphore");
-        return ESP_FAIL;
-    }
+//     mesh_sem = xSemaphoreCreateBinary();
+//     if (mesh_sem == NULL) {
+//         ESP_LOGE(TAG, "Failed to create mesh semaphore");
+//         return ESP_FAIL;
+//     }
 
-    ret = nimble_port_init();
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to init nimble %d ", ret);
-        return ret;
-    }
+//     ret = nimble_port_init();
+//     if (ret != ESP_OK) {
+//         ESP_LOGE(TAG, "Failed to init nimble %d ", ret);
+//         return ret;
+//     }
 
-    /* Initialize the NimBLE host configuration. */
-    ble_hs_cfg.reset_cb = mesh_on_reset;
-    ble_hs_cfg.sync_cb = mesh_on_sync;
-    ble_hs_cfg.store_status_cb = ble_store_util_status_rr;
+//     /* Initialize the NimBLE host configuration. */
+//     ble_hs_cfg.reset_cb = mesh_on_reset;
+//     ble_hs_cfg.sync_cb = mesh_on_sync;
+//     ble_hs_cfg.store_status_cb = ble_store_util_status_rr;
 
-    /* XXX Need to have template for store */
-    ble_store_config_init();
+//     /* XXX Need to have template for store */
+//     ble_store_config_init();
 
-    nimble_port_freertos_init(mesh_host_task);
+//     nimble_port_freertos_init(mesh_host_task);
 
-    xSemaphoreTake(mesh_sem, portMAX_DELAY);
+//     xSemaphoreTake(mesh_sem, portMAX_DELAY);
 
-    return ESP_OK;
-}
+//     return ESP_OK;
+// }
 
 
 

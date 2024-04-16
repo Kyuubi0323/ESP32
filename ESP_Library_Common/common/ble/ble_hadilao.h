@@ -44,8 +44,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "esp_bt.h"
+#include "esp_bt_main.h"
+#include "esp_bt_device.h"
 
-esp_err_t bluetooth_init(void);
+
+
+//esp_err_t bluetooth_init(void);
 
 
 
