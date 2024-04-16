@@ -22,7 +22,7 @@
 #include "esp_mac.h"
 #include "esp_chip_info.h"
 
-//#include "coap3/coap.h"
+#include "coap3/coap.h"
 
 #include "driver/gpio.h"
 #include "driver/uart.h"
