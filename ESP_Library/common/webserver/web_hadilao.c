@@ -13,8 +13,8 @@
 #include "esp_smartconfig.h"
 #include "esp_http_client.h"
 #include "esp_attr.h"
-#include "mqtt_client.h"
-#include "esp_spiffs.h"
+
+
 #include "esp_http_server.h"
 
 #include "driver/gpio.h"
