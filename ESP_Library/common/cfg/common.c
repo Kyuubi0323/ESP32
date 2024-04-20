@@ -31,17 +31,8 @@
 #include "driver/uart.h"
 #include "driver/spi_master.h"
 
-
-
-#include "wifi/wifi_sta.h"
-#include "wifi/wifi_ap.h"
-#include "cfg/common.h"
-#include "interface/button.h"
-#include "interface/led.h"
-#include "cjson/cJSON.h"
-
-#include "spiffs/spiffs.h"
-#include "web_server/web_server.h"
+#include "cJSON.h"
+#include "common.h"
 
 static const char *TAG = "COMMON";
 
