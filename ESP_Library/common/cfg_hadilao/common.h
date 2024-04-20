@@ -19,10 +19,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MESH_MODE 11
-#define SMARTCONFIG_MODE 20
-#define WIFI_SOFTAP_MODE 31
-#define MAIN_MODE 40
+
+#define SMARTCONFIG_MODE 10
+
+#define MAIN_MODE 30
 
 typedef enum
 {

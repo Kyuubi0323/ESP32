@@ -31,8 +31,10 @@
 #include "driver/uart.h"
 #include "driver/spi_master.h"
 
-#include "cJSON.h"
+
+
 #include "common.h"
+#include "cJSON.h"
 
 static const char *TAG = "COMMON";
 
