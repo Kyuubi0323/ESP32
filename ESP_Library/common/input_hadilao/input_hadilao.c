@@ -3,6 +3,7 @@
 #include <esp_log.h>
 #include "driver/gpio.h"
 #include "input_hadilao.h"
+#include "output_hadilao.h"
 #include "esp_attr.h"
 input_callback_t input_callback = NULL;
 
@@ -33,5 +34,25 @@ uint8_t input_io_get_level(gpio_num_t gpio_num)
 {
     return gpio_get_level(gpio_num);
 }
+/* example with input button and output LED_GPIO*/
+/* app_main.c 
+    void input_event_callback(int pin)
+    {
+        if(pin == GPIO_NUM_X)
+        {
+            output_io_toggle(BLINK_GPIO);
+        }
+    }
+    void app_main()
+    {
+        output_io_create(BLINK_GPIO);
+        input_io_create(GPIO_NUM_X, HI_TO_LO);
+        input_set_callback(input_event_callback);
+        while(1)
+        {
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+        }
+    }
+*/
 
 
